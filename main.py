@@ -59,6 +59,24 @@ def main(page: ft.Page):
                     calc.count = 1
                     
                     
+                    #DIVISÃO
+            elif value == "/":
+                if calc.num1 == 0.0:
+                    calc.num1 = float(text.value)
+                    text.value = "0"
+                    calc.operator = "/"
+                else:
+                    if float(text.value) == 0.0:
+                        text.value = "ERRO: Divisão por zero"
+                        calc.num1 = 0.0
+                        calc.count = 0
+                        calc.operator = ""
+                    else:
+                        resultado = operacoes.divisao(calc.num1, float(text.value))
+                        calc.num1 = resultado 
+                        text.value = resultado
+                        calc.count = 1
+                    
             else:
                 text.value = text.value + value if text.value != "0" else value
                 

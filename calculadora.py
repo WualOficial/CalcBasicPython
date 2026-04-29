@@ -22,3 +22,7 @@ class operacoes:
         if b == "*":
             return a
         return a * b
+    def divisao(a, b):
+        if b == "/":
+            return a
+        return a / b
