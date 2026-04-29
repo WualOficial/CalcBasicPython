@@ -17,3 +17,8 @@ class operacoes:
             return a + b #Subtrair um número negativo é o mesmo que somar o valor positivo 
         else:
             return a - b
+        
+    def multiplicacao(a, b):
+        if b == "*":
+            return a
+        return a * b
