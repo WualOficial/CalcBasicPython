@@ -10,23 +10,27 @@ def main(page: ft.Page):
     text = ft.Text("0", size=40, weight=ft.FontWeight.BOLD)
 
     def update_display(value):
-        if value == "." and "." in text.value:
-            text.value = text.value
-        elif value == "+":
-            if calc.num1 == 0.0:
-                calc.num1 = float(text.value)
-                text.value = "0"
-                print(calc.num1)
-            else:
-                resultado = operacoes.soma(calc.num1, float(text.value))
-                calc.num1 = resultado 
-                text.value = str(resultado)
-                
-        
-        else:
-            text.value = text.value + value if text.value != "0" else value
+        if calc.count == 0:
+            if value == "." and "." in text.value:
+                text.value = text.value
+            elif value == "+":
+                if calc.num1 == 0.0:
+                    calc.num1 = text.value
+                    text.value = "0"
+                    print(calc.num1)
+                else:
+                    resultado = operacoes.soma(calc.num1, text.value)
+                    calc.num1 = resultado 
+                    text.value = resultado
+                    calc.count = 1
+                    
             
-        
+            else:
+                text.value = text.value + value if text.value != "0" else value
+                
+        else:
+            text.value = value
+            calc.count = 0
         page.update()
     
     def clear_display():
