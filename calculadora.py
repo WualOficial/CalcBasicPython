@@ -8,9 +8,12 @@ class operacoes:
     def soma(a, b):
         if b == "+":
             return a
-        return float(a) + float(b)
+        return a + b
     
     def subtracao(a, b):
         if b == "-":
             return a
-        return float(a) - float(b)
+        if b < 0:
+            return a + b #Subtrair um número negativo é o mesmo que somar o valor positivo 
+        else:
+            return a - b

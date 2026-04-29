@@ -22,7 +22,7 @@ def main(page: ft.Page):
                     calc.operator = "+"
                     
                 else:
-                    resultado = operacoes.soma(calc.num1, text.value)
+                    resultado = operacoes.soma(calc.num1, float(text.value))
                     calc.num1 = resultado 
                     text.value = resultado
                     calc.count = 1
@@ -37,7 +37,7 @@ def main(page: ft.Page):
                         text.value = "0"
                         calc.operator = "-"
                     else:
-                        resultado = operacoes.subtracao(calc.num1, text.value)
+                        resultado = operacoes.subtracao(calc.num1, float(text.value))
                         calc.num1 = resultado 
                         text.value = resultado
                         calc.count = 1
